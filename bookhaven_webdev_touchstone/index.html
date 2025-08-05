@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Haven - Welcome</title>
+
+        <!-- this link connects html to the style.css sheet-->
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="c:\Users\stach\OneDrive\Documents\Code\HTML_CSS\bookhaven_webdev_touchstone\Client3_LogoPalette1_2E4057.png" alt="Library Logo">
+                </a>
+            </div>
+        </header>
+        
+        <h1>Welcome to Book Haven!</h1>
+        <!--Navigation Menu-->
+        <nav class="navbar">
+            <!--unordered list of elements that make up the different pages of the site-->
+            <ul>
+                <li><a href=index.html>Home</a></li>
+                <li><a href=gallery.html>Gallery</a></li>
+                <li><a href=ourstory.html>Our Story</a></li>
+                <li><a href=halloffame.html>Hall of Fame</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content starts-->
+        <main>
+            <section>
+                <h2>Your Gateway to Knowledge</h2>
+                <p class="intro-text">At Book Haven, we believe in the transformative power of books. Our carefully curated collection includes both timeless classics and the latest releases across a variety of genres. Whether you're a researcher, casual reader, or lifelong learner, there's something here for everyone.</p>
+            </section>
+            
+            <section>
+                <h3>Explore Our Collection</h3>
+                <p style="text-align: center;">Discover a world of knowledge with our extensive collection of books, journals, and multimedia. Visit our <a href="gallery.html">Gallery</a> to browse through the shelves.</p>
+            </section>
+    
+            <section>
+                <h3>Join the Community</h3>
+                <p style="text-align: center;">Become part of our growing library community. Visit the <a href="halloffame.html">Hall of Fame</a> to see the top readers and their favorite books, and share your own ranking!</p>
+            </section>
+        </main>
+        <footer>
+            
+            <div class ="subscribe-section" style="text-align: center;">
+                <p>Subscribe to our newsletter for local updates!:</p>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button onclick="subscribe()">Subscribe</button>
+            </div>
+        </footer>
+        
+        <!-- Adding javaScript for alert -->
+        <script>
+            function subscribe() {
+                var email = document.getElementById('email').value;
+                
+                if (email) {
+                    alert('Thank you for subscribing with ' + email + '!');
+                } else {
+                    alert('Please enter a valid email.');
+                }
+            }
+        </script>
+        
+    </body>
+    </html>

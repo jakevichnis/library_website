@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <title>Book Haven - Hall of Fame (Rankings)</title>
+        
+        <!-- this link connects html to the style.css sheet-->
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="c:\Users\stach\OneDrive\Documents\Code\HTML_CSS\bookhaven_webdev_touchstone\Client3_LogoPalette1_2E4057.png" alt="Library Logo">
+                </a>
+            </div>
+        </header>
+        
+
+        <h1>Hall of Fame Top 100 Ranking</h1>
+        <!--Navigation Menu-->
+        <nav class="navbar">
+            <!--unordered list of elements that make up the different pages of the site-->
+            <ul>
+                <li><a href=index.html>Home</a></li>
+                <li><a href=gallery.html>Gallery</a></li>
+                <li><a href=ourstory.html>Our Story</a></li>
+                <li><a href=halloffame.html>Hall of Fame</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content starts-->
+         
+         <p>Chosen by the readers:</p>
+         <table width="100%" cellpadding="2" cellspacing="0" border="0" style="color:#fff7ee">
+            <tbody><tr>
+            <td width="5%" align="left" valign="middle" style="color:#fff7ee" bgcolor="#2e4057">&nbsp;</td>
+            <td width="65%" align="left" valign="middle" style="color:#fff7ee" bgcolor="#2e4057"><span class="muted">Title Sorted by weighted rank (not shown).</span></td>
+            <td width="10%" align="left" valign="middle" style="color:#fff7ee" bgcolor="#2e4057">Ratings</td>
+            <td width="10%" align="left" valign="middle" style="color:#fff7ee" bgcolor="#2e4057">Avg</td>
+            <td width="10%" align="left" valign="middle" style="color:#fff7ee" bgcolor="#2e4057">You</td>
+            </tr>
+         <!-- <p>[book name + author] [average score] [number of votes]</p> -->
+         <footer>
+            
+            <div class="subscribe-section">
+                <p>Subscribe to our newsletter for local updates (and submit ratings)!:</p>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button onclick="subscribe()">Subscribe</button>
+            </div>
+        </footer>
+        
+        <!-- Adding javaScript for alert -->
+        <script>
+            function subscribe() {
+                var email = document.getElementById('email').value;
+                
+                if (email) {
+                    alert('Thank you for subscribing with ' + email + '!');
+                } else {
+                    alert('Please enter a valid email.');
+                }
+            }
+        </script>
+              
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Haven - Gallery</title>
+
+        <!-- this link connects html to the style.css sheet-->
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="c:\Users\stach\OneDrive\Documents\Code\HTML_CSS\bookhaven_webdev_touchstone\Client3_LogoPalette1_2E4057.png" alt="Library Logo">
+                </a>
+            </div>
+        </header>
+        
+        <main>
+        <h1>Gallery</h1>
+
+        <!--Navigation Menu-->
+        <nav class="navbar">
+            <!--unordered list of elements that make up the different pages of the site-->
+            <ul>
+                <li><a href=index.html>Home</a></li>
+                <li><a href=gallery.html>Gallery</a></li>
+                <li><a href=ourstory.html>Our Story</a></li>
+                <li><a href=halloffame.html>Hall of Fame</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content starts-->
+         
+         <p style="text-align: center;">Take a peek and stop by and enjoy our cozy aesthetic:</p>
+
+
+         <p style="text-align: center;">Due to our efforts to perserve community interaction, mail shipping is unavailable as our supplies are sourced from and for the community, so please stop by and pick these up!</p>
+
+         <div class="gallery-item" style="text-align: center;">
+            <img src="book1.jpg" alt="Book 1">
+            <p>Book Title 1</p>
+            <button class="add-to-cart" data-item="Book 1">Add to Cart</button>
+        </div>
+
+        <div class="gallery-item" style="text-align: center;">
+            <img src="book2.jpg" alt="Book 2">
+            <p>Book Title 2</p>
+            <button class="add-to-cart" data-item="Book 2">Add to Cart</button>
+        </div>
+
+        <!-- More items can be added similarly -->
+
+        <div class="cart-actions" style="text-align: center;">
+            <button id="clear-cart">Clear Cart</button>
+            <button id="process-order">Process Order</button>
+        </div>
+        </main>
+
+         <footer>
+            
+            <script>
+                // Initialize cart from local storage or as an empty array
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+                // function to handle "Add to Cart" button click
+                function addToCart(item) {
+                    cart.push(item);  // Add the selected item to the cart
+                    localStorage.setItem('cart', JSON.stringify(cart));  // Save updated cart to local storage
+                    alert(item + " has been added to your cart!");
+                }
+            
+                // function to handle "Clear Cart" button click
+                function clearCart() {
+                    cart = [];  // Empty the cart array
+                    localStorage.setItem('cart', JSON.stringify(cart));  // Clear the cart in local storage
+                    alert("Your cart has been cleared.");
+                }
+            
+                // function to handle "Process Order" button click
+                function processOrder() {
+                    if (cart.length > 0) {
+                        alert("Your order has been processed: " + cart.join(", "));
+                        // Optionally, clear the cart after processing the order
+                        clearCart();
+                    } else {
+                        alert("Your cart is empty. Add some items before processing the order.");
+                    }
+                }
+            
+                // Add event listeners to "Add to Cart" buttons
+                const addToCartButtons = document.querySelectorAll('.add-to-cart');
+                addToCartButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const item = this.getAttribute('data-item');  // Get the item name from the button's data attribute
+                        addToCart(item);  // Call the addToCart function
+                    });
+                });
+            
+                // Add event listener to "Clear Cart" button
+                document.getElementById('clear-cart').addEventListener('click', clearCart);
+            
+                // Add event listener to "Process Order" button
+                document.getElementById('process-order').addEventListener('click', processOrder);
+            
+                // Optional: restore cart data on page load (useful for showing cart items in a cart view)
+                window.addEventListener('load', () => {
+                    if (cart.length > 0) {
+                        console.log("Items in your cart:", cart);
+                        // You can also display cart items dynamically on the page if needed.
+                    }
+                });
+            </script>
+            
+
+            <div class ="subscribe-section" style="text-align: center;">
+                <div class="subscribe-section">
+                <p>Subscribe to our newsletter for local updates!:</p>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button onclick="subscribe()">Subscribe</button>
+            </div>
+        </footer>
+        
+        <!-- Adding javaScript for alert -->
+        <script>
+            function subscribe() {
+                var email = document.getElementById('email').value;
+                
+                if (email) {
+                    alert('Thank you for subscribing with ' + email + '!');
+                } else {
+                    alert('Please enter a valid email.');
+                }
+            }
+        </script>
+        
+    </body>
+</html>

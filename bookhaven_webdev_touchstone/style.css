@@ -1,0 +1,139 @@
+body {
+    margin: 0px;
+    background-color: #fff7ee;
+    color: #131C26; /* Updated font color */
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Style for the header and logo */
+header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff7ee; /* Match the background color */
+}
+
+.logo img {
+    height: 50px; /* Adjust size as needed */
+    width: auto;
+}
+
+/* for mobile images */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+h3 {
+    text-align: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.intro-text {
+    font-size: 20px; /* Body Large */
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    align-items: center;
+}
+
+.navbar ul {
+    align-items: center;
+    text-align: center;
+    background-color: #2e4057;
+    display: block;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a {
+    color: #fff7ee;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.navbar li {
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    
+    /* Adjust logo size */
+    .logo img {
+        height: 30px;
+    }
+
+    /* Stack navigation links vertically for mobile */
+    .navbar ul {
+        display: block;
+        text-align: left;
+    }
+
+    .navbar li {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar a {
+        padding: 10px;
+        font-size: 18px; /* Adjust text size for smaller screens */
+    }
+
+    /* Make content padding smaller */
+    main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    /* Make headings smaller */
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .intro-text {
+        font-size: 16px;
+
+    }
+}
